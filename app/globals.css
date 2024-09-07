@@ -22,23 +22,319 @@ button {
 
 .custom-bounce {
   animation: float 5s infinite;
-
-
 }
 
 @keyframes float {
   0% {
-    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
     transform: translatey(0px);
   }
 
   50% {
-    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
     transform: translatey(-20px);
   }
 
   100% {
-    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
     transform: translatey(0px);
+  }
+}
+
+
+
+/*CSS FOR ELEMENTOR*/
+
+/* Shared properties of all circles */
+.circles {
+  position: absolute;
+  border-radius: 50%;
+  opacity: .5;
+  filter: blur(200px);
+}
+
+/* Yellow Circle */
+.yellow {
+  background-image: linear-gradient(to right, #fce658 15%, #fce973 85%);
+  height: 300px;
+  width: 300px;
+  left: 5%;
+  top: 30%;
+  animation: transform 10s linear infinite both alternate, movement 10s linear infinite both;
+}
+
+/* Orange Circle */
+.orange {
+  background-image: linear-gradient(to right, #ff756e 15%, #fe8b85 85%);
+  height: 200px;
+  width: 200px;
+  left: 25%;
+  top: 50%;
+  animation: transform 15s linear infinite both alternate, movement 7s linear infinite both;
+}
+
+/* Pink Circle */
+.pink {
+  background-image: linear-gradient(to right, #f26afc 15%, #f6a6fc 85%);
+  height: 350px;
+  width: 350px;
+  left: 40%;
+  top: 30%;
+  animation: transform 13s linear infinite both alternate, movement 13s linear infinite both;
+}
+
+/* Cyan Circle */
+.cyan {
+  height: 400px;
+  width: 400px;
+  bottom: 10%;
+  background-image: linear-gradient(to right, #70eafa 15%, #2ae2fa 85%);
+  animation: transform 11s linear infinite both alternate, movement 15s linear infinite both;
+}
+
+/* Animations for Circles */
+
+@keyframes transform {
+  0% {}
+
+  20% {
+    border-radius: 37% 63% 51% 49% / 37% 35% 35% 63%;
+  }
+
+  40% {
+    border-radius: 36% 64% 64% 36% / 64% 48% 52% 26%;
+  }
+
+  60% {
+    border-radius: 37% 63% 51% 49% / 30% 30% 70% 73%;
+  }
+
+  80% {
+    border-radius: 40% 60% 42% 58% / 51% 51% 49% 59%;
+  }
+
+  100% {
+    border-radius: 33% 67% 70% 30% / 30% 40% 70% 70%;
+  }
+}
+
+@keyframes movement {
+
+  0%,
+  100% {
+    transform: none;
+  }
+
+  50% {
+    transform: translate(50%, 20%) rotateY(10deg) scale(1.25);
+  }
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+
+  /* Styles for tablets and smaller devices */
+  .yellow {
+    left: 0;
+    top: 40%;
+    height: 200px;
+    width: 200px;
+  }
+
+  .orange {
+    height: 150px;
+    width: 150px;
+  }
+
+  .pink {
+    height: 225px;
+    width: 225px;
+  }
+
+  .cyan {
+    height: 200px;
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  /* Styles for mobile devices */
+  .yellow {
+    height: 150px;
+    width: 150px;
+  }
+
+  .orange {
+    height: 100px;
+    width: 100px;
+  }
+
+  .pink {
+    height: 175px;
+    width: 175px;
+  }
+
+  .cyan {
+    height: 150px;
+    width: 150px;
+  }
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color: #1e293b;
+  --c1: #fbda61;
+  --c2: #5affb2;
+  --c3: #2563eb;
+  --gradient: linear-gradient(60deg,
+      var(--c3),
+      var(--c2),
+      var(--c1),
+      var(--c2),
+      var(--c3));
+  --scale-start: 0.5;
+  --scale-end: 1.001;
+  --hover-offset: 5%;
+
+  /* 
+    linear easing generator
+    https://linear-easing-generator.netlify.app/
+  */
+  /* prettier-ignore */
+  --ease-elastic: linear(0, 0.186 2.1%, 0.778 7.2%, 1.027 9.7%, 1.133, 1.212, 1.264, 1.292 15.4%,
+      1.296, 1.294, 1.285, 1.269 18.9%, 1.219 20.9%, 1.062 25.8%, 0.995 28.3%,
+      0.944 31.1%, 0.93, 0.921, 0.92 35.7%, 0.926, 0.94 39.7%, 1.001 47%, 1.014,
+      1.021 52.4%, 1.02 56.4%, 1 65.5%, 0.994 70.7%, 1.001 88.4%, 1);
+  --ease-bounce-out: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@media (prefers-reduced-motion) {
+  :root {
+    --scale-start: var(--scale-end);
+    --ease-elastic: ease-out;
+    --ease-bounce-out: ease-out;
+    --hover-offset: 0;
+  }
+}
+
+
+.intro {
+  display: flex;
+  justify-content: center;
+  gap: 0.2em;
+  font-size: 0.5em;
+  margin-block-start: calc(50vh - 1ex);
+}
+
+.intro span {
+  display: inline-block;
+}
+
+.intro span:first-child {
+  transform-origin: right bottom;
+  animation: wave 250ms 1s ease 3;
+}
+
+.intro span:last-child {
+  animation: hover 500ms linear infinite;
+}
+
+.box {
+  margin-block: 40vh;
+}
+
+.text {
+  font-size: calc(1rem + 8vmin);
+  text-align: center;
+  overflow-x: hidden;
+  padding-inline: 1rem;
+  font-family: system-ui;
+  font-weight: 800;
+  margin-inline: auto;
+  padding-block: 0.2em;
+  max-inline-size: 15ch;
+  text-wrap: balance;
+  background-image: var(--gradient);
+  background-size: 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@supports (animation-timeline: view()) {
+  .box {
+    animation: trigger steps(1) both, fade linear both;
+    animation-timeline: view();
+    animation-range: entry 80% contain 40%;
+  }
+
+  .text {
+    animation: pop-back 300ms var(--ease-bounce-out) forwards;
+  }
+
+  @container style(--animate: true) {
+    .text {
+      animation: pop 600ms var(--ease-elastic) forwards,
+        text-gradient 1s cubic-bezier(0, 0.55, 0.45, 1) forwards;
+    }
+  }
+}
+
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes trigger {
+  to {
+    --animate: true;
+  }
+}
+
+@keyframes pop {
+  from {
+    scale: var(--scale-start);
+  }
+
+  to {
+    scale: var(--scale-end);
+  }
+}
+
+@keyframes text-gradient {
+  100% {
+    background-position: 150% center;
+  }
+}
+
+@keyframes pop-back {
+  from {
+    scale: var(--scale-end);
+  }
+
+  to {
+    color: var(--color);
+    scale: var(--scale-start);
+  }
+}
+
+
+@keyframes hover {
+
+  from,
+  to {
+    translate: 0 calc(var(--hover-offset) * -1);
+  }
+
+  50% {
+    translate: 0 var(--hover-offset);
   }
 }

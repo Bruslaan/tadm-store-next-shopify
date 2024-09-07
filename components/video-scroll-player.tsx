@@ -14,24 +14,43 @@ const ScrollVideo: React.FC = () => {
   const playbackProgress = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   useEffect(() => {
+    if (!videoRef.current || !videoContainerRef.current) return;
+
+    let frameId: number;
+
     const handleScrollChange = (progress: number) => {
-      if (!videoRef.current || !videoContainerRef.current) {
-        return;
-      }
-
-      const duration = videoRef.current.duration;
-
-      videoRef.current.currentTime = progress * duration;
+      const duration = videoRef.current!.duration;
+      frameId = requestAnimationFrame(() => {
+        videoRef.current!.currentTime = progress * duration;
+      });
     };
 
     return playbackProgress.on('change', handleScrollChange);
   }, [playbackProgress]);
 
   return (
-    <div ref={videoContainerRef} className="h-[300vh]">
+    <div ref={videoContainerRef} className="relative h-[400vh]">
+      <div className="absolute right-10 top-0 z-10 mt-80">
+        <div className="box">
+          <p className="text">Schwarz Kümmel</p>
+        </div>
+        <div className="box">
+          <p className="text">Algen Öl</p>
+        </div>
+        <div className="box">
+          <p className="text">Walnuss Öl</p>
+        </div>
+        <div className="box">
+          <p className="text">Hanf Öl</p>
+        </div>
+        <div className="box">
+          <p className="text">Vegane Kapsel</p>
+        </div>
+      </div>
+
       <motion.div
-        className="custom-bounce"
         style={{
+          background: 'white',
           position: 'sticky',
           top: 0,
           height: '100vh',
@@ -40,12 +59,20 @@ const ScrollVideo: React.FC = () => {
           alignItems: 'center'
         }}
       >
-        <motion.video
-          ref={videoRef}
-          src="https://res.cloudinary.com/dtvtmykeg/video/upload/v1718573595/tadm_skbkly.mp4" // Replace with your video path
-          style={{ width: '100%' }}
-          muted
-        />
+        <div className="relative">
+          <motion.video
+            className="custom-bounce"
+            ref={videoRef}
+            src="https://res.cloudinary.com/dtvtmykeg/video/upload/v1718573595/tadm_skbkly.mp4" // Replace with your video path
+            style={{ width: '100%' }}
+            muted
+          />
+          <div className="circles absolute bottom-0 right-40 bg-blend-multiply">
+            <div className="yellow"></div>
+            <div className="orange"></div>
+            <div className="pink"></div>
+          </div>
+        </div>
       </motion.div>
     </div>
   );
