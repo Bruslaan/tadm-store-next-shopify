@@ -1,6 +1,7 @@
 'use client';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useEffect, useRef } from 'react';
+import TextAppear from './text-appear';
 
 const ScrollVideo: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -32,20 +33,20 @@ const ScrollVideo: React.FC = () => {
     <div ref={videoContainerRef} className="relative h-[400vh]">
       <div className="absolute right-10 top-0 z-10 mt-80">
         <div className="box">
-          <p className="text">Schwarz Kümmel</p>
+          <TextAppear>Schwarz Kümmel Öl</TextAppear>
         </div>
         <div className="box">
-          <p className="text">Algen Öl</p>
-        </div>
+          <TextAppear>Algen Öl</TextAppear>
+        </div>{' '}
         <div className="box">
-          <p className="text">Walnuss Öl</p>
-        </div>
+          <TextAppear>Walnuss Öl</TextAppear>
+        </div>{' '}
         <div className="box">
-          <p className="text">Hanf Öl</p>
+          <TextAppear>Hanf Öl</TextAppear>
         </div>
-        <div className="box">
-          <p className="text">Vegane Kapsel</p>
-        </div>
+        <TextAppear>Vegan</TextAppear>
+        <TextAppear>Helal</TextAppear>
+        <TextAppear>Koscher</TextAppear>
       </div>
 
       <motion.div
@@ -67,7 +68,7 @@ const ScrollVideo: React.FC = () => {
             style={{ width: '100%' }}
             muted
           />
-          <div className="circles absolute bottom-0 right-40 bg-blend-multiply">
+          <div className="circles absolute bottom-0 left-40 bg-blend-multiply">
             <div className="yellow"></div>
             <div className="orange"></div>
             <div className="pink"></div>

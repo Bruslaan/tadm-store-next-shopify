@@ -263,25 +263,6 @@ button {
   color: transparent;
 }
 
-@supports (animation-timeline: view()) {
-  .box {
-    animation: trigger steps(1) both, fade linear both;
-    animation-timeline: view();
-    animation-range: entry 80% contain 40%;
-  }
-
-  .text {
-    animation: pop-back 300ms var(--ease-bounce-out) forwards;
-  }
-
-  @container style(--animate: true) {
-    .text {
-      animation: pop 600ms var(--ease-elastic) forwards,
-        text-gradient 1s cubic-bezier(0, 0.55, 0.45, 1) forwards;
-    }
-  }
-}
-
 
 @keyframes fade {
   from {

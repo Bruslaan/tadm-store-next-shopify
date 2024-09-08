@@ -1,3 +1,4 @@
+import TextAppear from 'components/text-appear';
 import { FlipWords } from 'components/text-flip';
 import ScrollVideo from 'components/video-scroll-player';
 
@@ -21,6 +22,7 @@ export default function HomePage() {
         </div>
       </div>
 
+      <TextAppear>Whats inside TADM</TextAppear>
       <ScrollVideo />
     </>
   );
