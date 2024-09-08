@@ -51,7 +51,6 @@ const ScrollVideo: React.FC = () => {
 
       <motion.div
         style={{
-          background: 'white',
           position: 'sticky',
           top: 0,
           height: '100vh',
@@ -61,10 +60,11 @@ const ScrollVideo: React.FC = () => {
         }}
       >
         <div className="relative">
+          <div className="fade-out-gradient absolute inset-0"></div>
           <motion.video
             className="custom-bounce"
             ref={videoRef}
-            src="https://res.cloudinary.com/dtvtmykeg/video/upload/v1718573595/tadm_skbkly.mp4" // Replace with your video path
+            src="/static/tadm.mp4" // Replace with your video path
             style={{ width: '100%' }}
             muted
           />

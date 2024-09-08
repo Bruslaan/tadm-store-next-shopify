@@ -9,8 +9,8 @@ function TextAppear({ children }: { children: ReactNode }) {
   return (
     <motion.div
       ref={ref}
-      initial={{ scale: 0.3, opacity: 1 }}
-      animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.5, opacity: 1 }}
+      initial={{ scale: 0.3, opacity: 0.6 }}
+      animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.5, opacity: 0.6 }}
       transition={{ type: 'spring', stiffness: 500, damping: 30 }}
     >
       <h1 className="text cursor-pointer">{children}</h1>
