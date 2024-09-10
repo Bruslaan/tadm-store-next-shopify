@@ -19,6 +19,17 @@
 
 }
 
+.glass-morph {
+  /* From https://css.glass */
+  background-image: linear-gradient(to bottom right, #ff555500, #ffffff00);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(71.9px);
+  -webkit-backdrop-filter: blur(71.9px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+
 @media (prefers-color-scheme: light) {
   html {
     color-scheme: light;
@@ -69,7 +80,7 @@ button {
 
 /* Yellow Circle */
 .yellow {
-  background-image: linear-gradient(to right, #fce658 15%, #fce973 85%);
+  background-image: linear-gradient(to right, #2200ff 15%, #ffffff 85%);
   height: 300px;
   width: 300px;
   left: 5%;
@@ -79,7 +90,7 @@ button {
 
 /* Orange Circle */
 .orange {
-  background-image: linear-gradient(to right, #ff756e 15%, #fe8b85 85%);
+  background-image: linear-gradient(to right, #1d00d9 15%, #fe8b85 85%);
   height: 200px;
   width: 200px;
   left: 25%;
@@ -89,7 +100,7 @@ button {
 
 /* Pink Circle */
 .pink {
-  background-image: linear-gradient(to right, #f26afc 15%, #f6a6fc 85%);
+  background-image: linear-gradient(to right, #000000 15%, #ffffff 85%);
   height: 350px;
   width: 350px;
   left: 40%;

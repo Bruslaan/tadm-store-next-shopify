@@ -1,8 +1,9 @@
 'use client';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import Image from 'next/image';
 import { useEffect, useRef } from 'react';
+import ParallaxComponent from './parallax-effect';
 import TextAppear from './text-appear';
-
 const ScrollVideo: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const videoContainerRef = useRef<HTMLDivElement>(null);
@@ -30,19 +31,44 @@ const ScrollVideo: React.FC = () => {
   }, [playbackProgress]);
 
   return (
-    <div ref={videoContainerRef} className="relative h-[400vh]">
+    <div ref={videoContainerRef} className="relative h-[500vh]">
       <div className="absolute right-10 top-0 z-10 mt-80">
         <div className="box">
-          <TextAppear>Schwarz Kümmel Öl</TextAppear>
+          <TextAppear
+            withLink={true}
+            subtext="Unsere Drinks halten dich 3-5 Stunden satt und sind perfekt für unterwegs, bei der Arbeit oder auch zu Hause.
+
+"
+          >
+            Schwarz Kümmel Öl
+          </TextAppear>
         </div>
         <div className="box">
-          <TextAppear>Algen Öl</TextAppear>
+          <TextAppear
+            withLink={true}
+            subtext="Unsere Drinks halten dich 3-5 Stunden satt und sind perfekt für unterwegs, bei der Arbeit oder auch zu Hause.
+"
+          >
+            Algen Öl
+          </TextAppear>
         </div>{' '}
         <div className="box">
-          <TextAppear>Walnuss Öl</TextAppear>
+          <TextAppear
+            withLink={true}
+            subtext="Unsere Drinks halten dich 3-5 Stunden satt und sind perfekt für unterwegs, bei der Arbeit oder auch zu Hause.
+"
+          >
+            Walnuss Öl
+          </TextAppear>
         </div>{' '}
         <div className="box">
-          <TextAppear>Hanf Öl</TextAppear>
+          <TextAppear
+            withLink={true}
+            subtext="Unsere Drinks halten dich 3-5 Stunden satt und sind perfekt für unterwegs, bei der Arbeit oder auch zu Hause.
+        "
+          >
+            Hanf Öl
+          </TextAppear>
         </div>
         <TextAppear>Vegan</TextAppear>
         <TextAppear>Helal</TextAppear>
@@ -60,9 +86,63 @@ const ScrollVideo: React.FC = () => {
         }}
       >
         <div className="relative">
-          <div className="fade-out-gradient absolute inset-0"></div>
+          <ParallaxComponent
+            className="absolute bottom-0 z-40 md:-bottom-40"
+            speed={100}
+            rotationSpeed={50}
+          >
+            <Image
+              className="w-[10vw] transition-transform"
+              src="/static/capsule.png"
+              alt={'alt'}
+              width="150"
+              height="150"
+            />
+          </ParallaxComponent>
+
+          <ParallaxComponent
+            className="absolute top-10 z-40 blur-md"
+            speed={400}
+            rotationSpeed={50}
+          >
+            <Image
+              className="w-[10vw] transition-transform"
+              src="/static/capsule.png"
+              alt={'alt'}
+              width="150"
+              height="150"
+            />
+          </ParallaxComponent>
+          <ParallaxComponent
+            className="absolute right-10 z-40 blur-md"
+            speed={100}
+            rotationSpeed={150}
+          >
+            <Image
+              className="w-[10vw] transition-transform"
+              src="/static/capsule.png"
+              alt={'alt'}
+              width="150"
+              height="150"
+            />
+          </ParallaxComponent>
+
+          <ParallaxComponent
+            className="absolute bottom-0 z-40 blur-md md:-bottom-40 md:right-0"
+            speed={1000}
+            rotationSpeed={250}
+          >
+            <Image
+              className="w-[8vw] transition-transform"
+              src="/static/capsule.png"
+              alt={'alt'}
+              width="150"
+              height="150"
+            />
+          </ParallaxComponent>
+          {/* <div className="fade-out-gradient absolute inset-0"></div> */}
           <motion.video
-            className="custom-bounce"
+            className="custom-bounce mix-blend-darken"
             ref={videoRef}
             src="/static/tadm.mp4" // Replace with your video path
             style={{ width: '100%' }}
