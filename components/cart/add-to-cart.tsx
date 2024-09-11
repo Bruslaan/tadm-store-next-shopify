@@ -16,7 +16,7 @@ function SubmitButton({
   selectedVariantId: string | undefined;
 }) {
   const buttonClasses =
-    'relative flex w-full items-center justify-center rounded-full bg-blue-600 p-4 tracking-wide text-white';
+    'flex w-full items-center justify-center rounded-[100px] bg-black px-5 py-4 text-center text-lg font-semibold text-white shadow-sm transition-all duration-500 hover:bg-orange-500 hover:shadow-indigo-400';
   const disabledClasses = 'cursor-not-allowed opacity-60 hover:opacity-60';
 
   if (!availableForSale) {
@@ -27,7 +27,6 @@ function SubmitButton({
     );
   }
 
-  console.log(selectedVariantId);
   if (!selectedVariantId) {
     return (
       <button
@@ -50,9 +49,6 @@ function SubmitButton({
         'hover:opacity-90': true
       })}
     >
-      <div className="absolute left-0 ml-4">
-        <PlusIcon className="h-5" />
-      </div>
       Add To Cart
     </button>
   );
@@ -74,6 +70,7 @@ export function AddToCart({ product }: { product: Product }) {
 
   return (
     <form
+      className="w-full"
       action={async () => {
         addCartItem(finalVariant, product);
         await actionWithVariant();

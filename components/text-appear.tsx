@@ -24,7 +24,7 @@ function TextAppear({
       transition={{ type: 'spring', stiffness: 500, damping: 30 }}
     >
       <h1 className="text">{children}</h1>
-      {subtext && <p className="max-w-sm text-xl">{subtext}</p>}
+      {subtext && <p className="max-w-sm text-xl text-gray-500">{subtext}</p>}
 
       {withLink && (
         <Link className="mt-4 uppercase text-blue-400" href="">

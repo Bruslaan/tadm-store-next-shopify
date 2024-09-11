@@ -76,7 +76,7 @@ export default async function ProductPage({ params }: { params: { handle: string
           __html: JSON.stringify(productJsonLd)
         }}
       />
-      <ProductOverview />
+      <ProductOverview product={product} />
       {/* <div className="flex h-[90vh] w-full flex-col">
         <div className="flex flex-1 flex-col md:flex-row dark:border-neutral-800 dark:bg-black">
           <div className="h-full w-full flex-1">
