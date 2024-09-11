@@ -36,7 +36,7 @@ const FaqPage = () => {
   ];
 
   return (
-    <div className="relative h-full w-full bg-white">
+    <div className="relative min-h-screen w-full bg-white">
       <div className="absolute h-full w-full bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
       <div className="relative z-10 mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
         <div className="mx-auto mb-10 max-w-2xl text-center lg:mb-14">

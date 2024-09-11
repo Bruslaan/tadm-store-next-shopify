@@ -115,8 +115,8 @@ export default function HomePage() {
           <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-20">
             {/* Item */}
             <div className="py-20">
-              <h2 className="mb-6 bg-gradient-to-r from-orange-400 to-white bg-clip-text text-3xl font-bold md:mb-10 md:text-5xl lg:mb-12">
-                Understand sales performance better
+              <h2 className="mb-6 inline-block bg-gradient-to-r from-orange-400 to-yellow-300 bg-clip-text text-4xl font-bold text-transparent md:mb-10 md:text-6xl lg:mb-12">
+                With Nature in Mind
               </h2>
               <ul className="grid max-w-2xl grid-cols-2 sm:gap-5 lg:max-w-none">
                 <li className="flex flex-col p-5">
@@ -166,9 +166,11 @@ export default function HomePage() {
               </ul>
             </div>
             {/* Item */}
-            <div className="h-full w-full">
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
+            <div className="h-full w-full overflow-hidden rounded-xl">
+              <Image
+                width={500}
+                height={500}
+                src="/static/footprint.png"
                 alt=""
                 className="mx-auto inline-block h-full w-full max-w-xl object-cover"
               />
