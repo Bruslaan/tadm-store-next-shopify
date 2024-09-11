@@ -214,8 +214,8 @@ button {
 :root {
   --color: #1e293b;
   --c1: #fbda61;
-  --c2: #5affb2;
-  --c3: #2563eb;
+  --c2: #edfb56;
+  --c3: #e15200;
   --gradient: linear-gradient(60deg,
       var(--c3),
       var(--c2),

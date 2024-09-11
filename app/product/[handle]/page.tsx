@@ -2,14 +2,11 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import { GridTileImage } from 'components/grid/tile';
-import { Gallery } from 'components/product/gallery';
+import ProductOverview from 'components/product-overview';
 import { ProductProvider } from 'components/product/product-context';
-import { ProductDescription } from 'components/product/product-description';
 import { HIDDEN_PRODUCT_TAG } from 'lib/constants';
 import { getProduct, getProductRecommendations } from 'lib/shopify';
-import { Image } from 'lib/shopify/types';
 import Link from 'next/link';
-import { Suspense } from 'react';
 
 export async function generateMetadata({
   params
@@ -79,7 +76,8 @@ export default async function ProductPage({ params }: { params: { handle: string
           __html: JSON.stringify(productJsonLd)
         }}
       />
-      <div className="flex h-[90vh] w-full flex-col">
+      <ProductOverview />
+      {/* <div className="flex h-[90vh] w-full flex-col">
         <div className="flex flex-1 flex-col md:flex-row dark:border-neutral-800 dark:bg-black">
           <div className="h-full w-full flex-1">
             <Suspense
@@ -101,7 +99,7 @@ export default async function ProductPage({ params }: { params: { handle: string
           </div>
         </div>
         <RelatedProducts id={product.id} />
-      </div>
+      </div> */}
     </ProductProvider>
   );
 }

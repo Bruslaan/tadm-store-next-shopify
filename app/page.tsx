@@ -1,6 +1,7 @@
+import FaqPage from 'components/faq-page';
 import Footer from 'components/layout/footer';
 import ParallaxComponent from 'components/parallax-effect';
-import Testimonials from 'components/testimonials';
+import TestimonialsTW from 'components/testimonals-tailwind';
 import TextAppear from 'components/text-appear';
 import ScrollVideo from 'components/video-scroll-player';
 import Image from 'next/image';
@@ -78,11 +79,11 @@ export default function HomePage() {
             </ParallaxComponent>
           </div>
 
-          <h1 className="relative z-20 inline-block bg-gradient-to-r from-orange-600 to-orange-200 bg-clip-text text-6xl font-bold text-transparent md:text-9xl">
+          <h1 className="text relative z-20 inline-block bg-gradient-to-r text-6xl font-bold text-transparent md:text-9xl">
             BRAIN
           </h1>
           <div className="z-0">
-            <h1 className="inline-block bg-gradient-to-r from-amber-600 to-yellow-200 bg-clip-text text-6xl font-bold text-transparent md:text-9xl">
+            <h1 className="text inline-block bg-gradient-to-r text-6xl font-bold text-transparent md:text-9xl">
               NUTRITION
             </h1>
           </div>
@@ -107,7 +108,77 @@ export default function HomePage() {
       <TextAppear>Whats inside TADM</TextAppear>
       <ScrollVideo />
 
-      <Testimonials />
+      <section>
+        {/* Container */}
+        <div className="mx-auto w-full max-w-7xl px-5 py-12 md:px-10 md:py-20">
+          {/* Component */}
+          <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-20">
+            {/* Item */}
+            <div className="py-20">
+              <h2 className="mb-6 bg-gradient-to-r from-orange-400 to-white bg-clip-text text-3xl font-bold md:mb-10 md:text-5xl lg:mb-12">
+                Understand sales performance better
+              </h2>
+              <ul className="grid max-w-2xl grid-cols-2 sm:gap-5 lg:max-w-none">
+                <li className="flex flex-col p-5">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
+                    alt=""
+                    className="mb-4 inline-block h-10 w-10 rounded-full object-cover"
+                  />
+                  <p className="mb-4 font-semibold">Support</p>
+                  <p className="text-sm text-gray-500">
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam, purus sit.
+                  </p>
+                </li>
+                <li className="flex flex-col p-5">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
+                    alt=""
+                    className="mb-4 inline-block h-10 w-10 rounded-full object-cover"
+                  />
+                  <p className="mb-4 font-semibold">Organise</p>
+                  <p className="text-sm text-gray-500">
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam, purus sit.
+                  </p>
+                </li>
+                <li className="flex flex-col p-5">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
+                    alt=""
+                    className="mb-4 inline-block h-10 w-10 rounded-full object-cover"
+                  />
+                  <p className="mb-4 font-semibold">Flexibility</p>
+                  <p className="text-sm text-gray-500">
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam, purus sit.
+                  </p>
+                </li>
+                <li className="flex flex-col p-5">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
+                    alt=""
+                    className="mb-4 inline-block h-10 w-10 rounded-full object-cover"
+                  />
+                  <p className="mb-4 font-semibold">Speed</p>
+                  <p className="text-sm text-gray-500">
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam, purus sit.
+                  </p>
+                </li>
+              </ul>
+            </div>
+            {/* Item */}
+            <div className="h-full w-full">
+              <img
+                src="https://firebasestorage.googleapis.com/v0/b/flowspark-1f3e0.appspot.com/o/Tailspark%20Images%2FPlaceholder%20Image.svg?alt=media&token=375a1ea3-a8b6-4d63-b975-aac8d0174074"
+                alt=""
+                className="mx-auto inline-block h-full w-full max-w-xl object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <TestimonialsTW />
+      <FaqPage />
 
       <Footer />
     </>

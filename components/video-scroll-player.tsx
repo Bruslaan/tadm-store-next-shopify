@@ -87,7 +87,7 @@ const ScrollVideo: React.FC = () => {
       >
         <div className="relative">
           <ParallaxComponent
-            className="absolute bottom-0 z-40 md:-bottom-40"
+            className="absolute bottom-0 z-40 hidden md:-bottom-40 md:block"
             speed={100}
             rotationSpeed={50}
           >
@@ -101,7 +101,7 @@ const ScrollVideo: React.FC = () => {
           </ParallaxComponent>
 
           <ParallaxComponent
-            className="absolute top-10 z-40 blur-md"
+            className="absolute top-10 z-40 hidden blur-md md:block"
             speed={400}
             rotationSpeed={50}
           >
@@ -114,7 +114,7 @@ const ScrollVideo: React.FC = () => {
             />
           </ParallaxComponent>
           <ParallaxComponent
-            className="absolute right-10 z-40 blur-md"
+            className="absolute right-20 z-40 hidden blur-md md:block"
             speed={100}
             rotationSpeed={150}
           >
@@ -128,7 +128,7 @@ const ScrollVideo: React.FC = () => {
           </ParallaxComponent>
 
           <ParallaxComponent
-            className="absolute bottom-0 z-40 blur-md md:-bottom-40 md:right-0"
+            className="absolute bottom-0 z-40 hidden blur-md md:-bottom-40 md:right-10 md:block"
             speed={1000}
             rotationSpeed={250}
           >
@@ -148,11 +148,11 @@ const ScrollVideo: React.FC = () => {
             style={{ width: '100%' }}
             muted
           />
-          <div className="circles absolute bottom-0 left-40 bg-blend-multiply">
+          {/* <div className="circles absolute bottom-0 left-40 bg-blend-multiply">
             <div className="yellow"></div>
             <div className="orange"></div>
             <div className="pink"></div>
-          </div>
+          </div> */}
         </div>
       </motion.div>
     </div>
